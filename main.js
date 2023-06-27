@@ -32,7 +32,7 @@ class Calculator {
     }
 }
 
-function caesarCiper(word, shiftFactor) {
+function caesarCipher(word, shiftFactor) {
     let newWord = '';
     for(let i = 0; i < word.length; i++) {
         let character = word.charAt(i);
@@ -59,4 +59,4 @@ function caesarCiper(word, shiftFactor) {
     return newWord;
 }
 
-export { capitalize, reverseString, Calculator, caesarCiper };
+export { capitalize, reverseString, Calculator, caesarCipher };
