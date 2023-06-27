@@ -32,4 +32,31 @@ class Calculator {
     }
 }
 
-export { capitalize, reverseString, Calculator };
+function caesarCiper(word, shiftFactor) {
+    let newWord = '';
+    for(let i = 0; i < word.length; i++) {
+        let character = word.charAt(i);
+        let code = character.charCodeAt(0);
+        let shiftedCode;
+        if(character.toLowerCase() != character.toUpperCase()) {
+            shiftedCode = code + shiftFactor;
+            if(code <= 90) {
+                if(shiftedCode > 90) {
+                    let diff = shiftedCode - 90;
+                    shiftedCode = 64 + diff;
+                }
+            } else {
+                if(shiftedCode > 122) {
+                    let diff = shiftedCode - 122;
+                    shiftedCode = 96 + diff;
+                }
+            }
+            newWord += String.fromCharCode(shiftedCode);
+        } else {
+            newWord += character;
+        }
+    }
+    return newWord;
+}
+
+export { capitalize, reverseString, Calculator, caesarCiper };
