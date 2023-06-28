@@ -59,4 +59,18 @@ function caesarCipher(word, shiftFactor) {
     return newWord;
 }
 
-export { capitalize, reverseString, Calculator, caesarCipher };
+function analyzeArray(array) {
+    const length = array.length;
+    const average = array.reduce((prev, curr) => prev + curr, 0)/ length;
+    const max = array.reduce((prev, curr) => Math.max(prev, curr), array[0]);
+    const min = array.reduce((prev, curr) => Math.min(prev, curr), array[0]);
+
+    return { 
+        'average' : average,
+        'min' : min,
+        'max' : max,
+        'length' : length,
+    };
+}
+
+export { capitalize, reverseString, Calculator, caesarCipher, analyzeArray };
